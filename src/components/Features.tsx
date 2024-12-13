@@ -1,25 +1,45 @@
-import { Shield, Clock, Award, Factory } from "lucide-react";
+import { Shield, Clock, Award, Factory, Tool, FileCheck, Ruler, Zap } from "lucide-react";
 
 const features = [
   {
     name: "Precision Guaranteed",
-    description: "Tolerances as tight as ±0.0002 inches",
-    icon: Shield,
+    description: "Achieve tolerances as tight as ±0.0002 inches with our advanced CNC machinery and expert quality control processes",
+    icon: Ruler,
   },
   {
     name: "Rapid Turnaround",
-    description: "24-hour quotes, expedited manufacturing available",
+    description: "24-hour quotes and expedited manufacturing available. Our efficient workflows ensure quick delivery without compromising quality",
     icon: Clock,
   },
   {
     name: "Quality Certified",
-    description: "ISO 9001:2015 certified facility",
+    description: "ISO 9001:2015 & AS9100D certified facility with comprehensive quality management systems and full material traceability",
     icon: Award,
   },
   {
     name: "Advanced Equipment",
-    description: "State-of-the-art 5-axis CNC machines",
+    description: "State-of-the-art 5-axis CNC machines capable of handling complex geometries and diverse materials",
     icon: Factory,
+  },
+  {
+    name: "Expert Machinists",
+    description: "Skilled team with decades of combined experience in precision manufacturing and complex part production",
+    icon: Tool,
+  },
+  {
+    name: "Quality Inspection",
+    description: "CMM verification and detailed inspection reports for every batch, ensuring consistent quality and compliance",
+    icon: FileCheck,
+  },
+  {
+    name: "Material Expertise",
+    description: "Extensive experience with exotic alloys, titanium, Inconel, and other high-performance materials",
+    icon: Shield,
+  },
+  {
+    name: "24/7 Production",
+    description: "Round-the-clock manufacturing capability to meet urgent deadlines and high-volume requirements",
+    icon: Zap,
   },
 ];
 
@@ -29,8 +49,11 @@ export const Features = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Why Choose Our Services
+            Industry-Leading Precision Manufacturing
           </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Our commitment to excellence and advanced manufacturing capabilities ensure your components meet the highest standards of precision and quality.
+          </p>
         </div>
         <div className="mx-auto mt-16 max-w-7xl sm:mt-20 lg:mt-24">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-4 lg:gap-y-16">
