@@ -1,4 +1,4 @@
-import { Shield, Clock, Award, Factory, Tool, FileCheck, Ruler, Zap } from "lucide-react";
+import { Shield, Clock, Award, Factory, FileCheck, Ruler, Zap } from "lucide-react";
 
 const features = [
   {
@@ -24,7 +24,7 @@ const features = [
   {
     name: "Expert Machinists",
     description: "Skilled team with decades of combined experience in precision manufacturing and complex part production",
-    icon: Tool,
+    icon: Award,
   },
   {
     name: "Quality Inspection",
