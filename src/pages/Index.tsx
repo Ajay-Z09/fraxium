@@ -1,6 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
-import { QuoteForm } from "@/components/QuoteForm";
+import { MultiStepQuoteForm } from "@/components/MultiStepQuoteForm";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -8,7 +8,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Hero />
       <Features />
-      <QuoteForm />
+      <MultiStepQuoteForm />
       <Footer />
     </div>
   );
