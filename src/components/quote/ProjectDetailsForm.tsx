@@ -33,141 +33,141 @@ export const ProjectDetailsForm = ({ formData, handleChange }: ProjectDetailsFor
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Part Name</label>
+        <label className="block text-sm font-semibold text-gray-900 mb-2">Part Name</label>
         <Input
           value={formData.partName}
           onChange={(e) => handleChange("partName", e.target.value)}
           required
-          className="w-full bg-white border-gray-200 focus:border-accent"
+          className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
           placeholder="Enter part name"
         />
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Material Type</label>
+          <label className="block text-sm font-semibold text-gray-900 mb-2">Material Type</label>
           <Select
             value={formData.materialType}
             onValueChange={(value) => handleChange("materialType", value)}
           >
-            <SelectTrigger className="w-full bg-white border-gray-200">
+            <SelectTrigger className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm">
               <SelectValue placeholder="Select material type" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="titanium">Titanium</SelectItem>
-              <SelectItem value="inconel">Inconel</SelectItem>
-              <SelectItem value="aluminum">Aluminum</SelectItem>
-              <SelectItem value="stainless-steel">Stainless Steel</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
+            <SelectContent className="bg-white border-2 border-gray-200 shadow-lg">
+              <SelectItem value="titanium" className="hover:bg-accent/10">Titanium</SelectItem>
+              <SelectItem value="inconel" className="hover:bg-accent/10">Inconel</SelectItem>
+              <SelectItem value="aluminum" className="hover:bg-accent/10">Aluminum</SelectItem>
+              <SelectItem value="stainless-steel" className="hover:bg-accent/10">Stainless Steel</SelectItem>
+              <SelectItem value="other" className="hover:bg-accent/10">Other</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Material Grade/Alloy</label>
+          <label className="block text-sm font-semibold text-gray-900 mb-2">Material Grade/Alloy</label>
           <Input
             value={formData.materialGrade}
             onChange={(e) => handleChange("materialGrade", e.target.value)}
             required
-            className="w-full bg-white border-gray-200 focus:border-accent"
+            className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
             placeholder="e.g., Ti-6Al-4V"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Required Certifications</label>
+        <label className="block text-sm font-semibold text-gray-900 mb-2">Required Certifications</label>
         <Input
           value={formData.certifications}
           onChange={(e) => handleChange("certifications", e.target.value)}
           placeholder="e.g., AS9100, ISO 13485"
-          className="w-full bg-white border-gray-200 focus:border-accent"
+          className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
         />
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Length (mm)</label>
+          <label className="block text-sm font-semibold text-gray-900 mb-2">Length (mm)</label>
           <Input
             type="number"
             value={formData.length}
             onChange={(e) => handleChange("length", e.target.value)}
             required
-            className="w-full bg-white border-gray-200 focus:border-accent"
+            className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
             placeholder="0.00"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Width (mm)</label>
+          <label className="block text-sm font-semibold text-gray-900 mb-2">Width (mm)</label>
           <Input
             type="number"
             value={formData.width}
             onChange={(e) => handleChange("width", e.target.value)}
             required
-            className="w-full bg-white border-gray-200 focus:border-accent"
+            className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
             placeholder="0.00"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Height (mm)</label>
+          <label className="block text-sm font-semibold text-gray-900 mb-2">Height (mm)</label>
           <Input
             type="number"
             value={formData.height}
             onChange={(e) => handleChange("height", e.target.value)}
             required
-            className="w-full bg-white border-gray-200 focus:border-accent"
+            className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
             placeholder="0.00"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Tolerances</label>
+        <label className="block text-sm font-semibold text-gray-900 mb-2">Tolerances</label>
         <Input
           value={formData.tolerances}
           onChange={(e) => handleChange("tolerances", e.target.value)}
           placeholder="e.g., ±0.005 mm"
           required
-          className="w-full bg-white border-gray-200 focus:border-accent"
+          className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
         />
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Machining Type</label>
+          <label className="block text-sm font-semibold text-gray-900 mb-2">Machining Type</label>
           <Select
             value={formData.machiningType}
             onValueChange={(value) => handleChange("machiningType", value)}
           >
-            <SelectTrigger className="w-full bg-white border-gray-200">
+            <SelectTrigger className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm">
               <SelectValue placeholder="Select machining type" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="milling">Milling</SelectItem>
-              <SelectItem value="turning">Turning</SelectItem>
-              <SelectItem value="grinding">Grinding</SelectItem>
-              <SelectItem value="edm">EDM</SelectItem>
+            <SelectContent className="bg-white border-2 border-gray-200 shadow-lg">
+              <SelectItem value="milling" className="hover:bg-accent/10">Milling</SelectItem>
+              <SelectItem value="turning" className="hover:bg-accent/10">Turning</SelectItem>
+              <SelectItem value="grinding" className="hover:bg-accent/10">Grinding</SelectItem>
+              <SelectItem value="edm" className="hover:bg-accent/10">EDM</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Surface Finish</label>
+          <label className="block text-sm font-semibold text-gray-900 mb-2">Surface Finish</label>
           <Input
             value={formData.surfaceFinish}
             onChange={(e) => handleChange("surfaceFinish", e.target.value)}
             placeholder="e.g., Ra 0.8"
             required
-            className="w-full bg-white border-gray-200 focus:border-accent"
+            className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Special Processes</label>
+        <label className="block text-sm font-semibold text-gray-900 mb-2">Special Processes</label>
         <Input
           value={formData.specialProcesses}
           onChange={(e) => handleChange("specialProcesses", e.target.value)}
           placeholder="e.g., 5-axis machining, deburring"
-          className="w-full bg-white border-gray-200 focus:border-accent"
+          className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
         />
       </div>
     </div>
