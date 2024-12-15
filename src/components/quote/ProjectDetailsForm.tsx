@@ -1,11 +1,4 @@
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 interface ProjectDetailsFormProps {
   formData: {
@@ -46,21 +39,13 @@ export const ProjectDetailsForm = ({ formData, handleChange }: ProjectDetailsFor
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">Material Type</label>
-          <Select
+          <Input
             value={formData.materialType}
-            onValueChange={(value) => handleChange("materialType", value)}
-          >
-            <SelectTrigger className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm">
-              <SelectValue placeholder="Select material type" />
-            </SelectTrigger>
-            <SelectContent className="bg-white border-2 border-gray-200 shadow-lg">
-              <SelectItem value="titanium" className="hover:bg-accent/10">Titanium</SelectItem>
-              <SelectItem value="inconel" className="hover:bg-accent/10">Inconel</SelectItem>
-              <SelectItem value="aluminum" className="hover:bg-accent/10">Aluminum</SelectItem>
-              <SelectItem value="stainless-steel" className="hover:bg-accent/10">Stainless Steel</SelectItem>
-              <SelectItem value="other" className="hover:bg-accent/10">Other</SelectItem>
-            </SelectContent>
-          </Select>
+            onChange={(e) => handleChange("materialType", e.target.value)}
+            required
+            className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
+            placeholder="Enter material type"
+          />
         </div>
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">Material Grade/Alloy</label>
@@ -134,20 +119,12 @@ export const ProjectDetailsForm = ({ formData, handleChange }: ProjectDetailsFor
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">Machining Type</label>
-          <Select
+          <Input
             value={formData.machiningType}
-            onValueChange={(value) => handleChange("machiningType", value)}
-          >
-            <SelectTrigger className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm">
-              <SelectValue placeholder="Select machining type" />
-            </SelectTrigger>
-            <SelectContent className="bg-white border-2 border-gray-200 shadow-lg">
-              <SelectItem value="milling" className="hover:bg-accent/10">Milling</SelectItem>
-              <SelectItem value="turning" className="hover:bg-accent/10">Turning</SelectItem>
-              <SelectItem value="grinding" className="hover:bg-accent/10">Grinding</SelectItem>
-              <SelectItem value="edm" className="hover:bg-accent/10">EDM</SelectItem>
-            </SelectContent>
-          </Select>
+            onChange={(e) => handleChange("machiningType", e.target.value)}
+            placeholder="Enter machining type"
+            className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
+          />
         </div>
         <div>
           <label className="block text-sm font-semibold text-gray-900 mb-2">Surface Finish</label>

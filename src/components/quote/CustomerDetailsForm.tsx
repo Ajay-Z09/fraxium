@@ -1,12 +1,5 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 interface CustomerDetailsFormProps {
   formData: {
@@ -89,22 +82,13 @@ export const CustomerDetailsForm = ({ formData, handleChange }: CustomerDetailsF
 
       <div>
         <label className="block text-sm font-semibold text-gray-900 mb-2">Industry</label>
-        <Select
+        <Input
           value={formData.industry}
-          onValueChange={(value) => handleChange("industry", value)}
-        >
-          <SelectTrigger className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm">
-            <SelectValue placeholder="Select your industry" />
-          </SelectTrigger>
-          <SelectContent className="bg-white border-2 border-gray-200 shadow-lg">
-            <SelectItem value="aerospace" className="hover:bg-accent/10">Aerospace</SelectItem>
-            <SelectItem value="medical" className="hover:bg-accent/10">Medical</SelectItem>
-            <SelectItem value="automotive" className="hover:bg-accent/10">Automotive</SelectItem>
-            <SelectItem value="defense" className="hover:bg-accent/10">Defense</SelectItem>
-            <SelectItem value="electronics" className="hover:bg-accent/10">Electronics</SelectItem>
-            <SelectItem value="other" className="hover:bg-accent/10">Other</SelectItem>
-          </SelectContent>
-        </Select>
+          onChange={(e) => handleChange("industry", e.target.value)}
+          required
+          className="w-full bg-white border-2 border-gray-200 focus:border-accent shadow-sm"
+          placeholder="Enter your industry"
+        />
       </div>
     </div>
   );
