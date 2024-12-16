@@ -33,8 +33,8 @@ export default {
           foreground: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#E5E4E2", // Changed from #00E7C3 to platinum color
-          foreground: "#000000",
+          DEFAULT: "#706FD3", // Changed to Medium Slate Blue
+          foreground: "#FFFFFF",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
