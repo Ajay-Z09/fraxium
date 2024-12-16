@@ -9,6 +9,11 @@ export const Hero = () => {
   return (
     <div className="relative bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Brand Logo */}
+        <div className="absolute top-8 left-8">
+          <h1 className="text-2xl font-bold text-[#706FD3]">Fraxium</h1>
+        </div>
+
         <div className="flex flex-col space-y-8">
           {/* Navigation Tabs */}
           <div className="flex space-x-4 border-b">
