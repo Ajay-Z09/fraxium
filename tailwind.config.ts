@@ -25,7 +25,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#1A1F2C",
+          DEFAULT: "#1A2B3B",
           foreground: "#FFFFFF",
         },
         secondary: {
@@ -33,8 +33,8 @@ export default {
           foreground: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#3B82F6",
-          foreground: "#FFFFFF",
+          DEFAULT: "#00E7C3",
+          foreground: "#000000",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
