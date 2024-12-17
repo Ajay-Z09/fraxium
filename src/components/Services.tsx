@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Settings2, Zap, RotateCcw, Microscope, Hammer, Wrench, Scissors, Scan } from "lucide-react";
+import { Settings2, Zap, RotateCcw, Microscope, Hammer, Wrench, Scissors, Scan, Printer, Factory } from "lucide-react";
 
 export const Services = () => {
   const services = [
@@ -42,6 +42,21 @@ export const Services = () => {
       title: "Automated Quality Inspection",
       icon: <Scan className="w-8 h-8 text-accent" />,
       description: "Advanced quality control and inspection processes"
+    },
+    {
+      title: "3D Printing",
+      icon: <Printer className="w-8 h-8 text-accent" />,
+      description: "Additive manufacturing for rapid prototyping and production"
+    },
+    {
+      title: "Injection Molding",
+      icon: <Factory className="w-8 h-8 text-accent" />,
+      description: "High-volume production of plastic parts with excellent consistency"
+    },
+    {
+      title: "Sheet Metal Fabrication",
+      icon: <Settings2 className="w-8 h-8 text-accent" />,
+      description: "Custom metal forming and fabrication services"
     }
   ];
 
