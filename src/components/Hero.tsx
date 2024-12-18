@@ -32,8 +32,8 @@ export const Hero = () => {
                 Custom Manufactured Parts Done Right.
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Discover the Fictiv difference for faster lead times, higher-quality parts, 
-                no minimum order quantities, and extensive capabilities. Partner with Fictiv 
+                Discover the Fraxium difference for faster lead times, higher-quality parts, 
+                no minimum order quantities, and extensive capabilities. Partner with Fraxium 
                 for all of your prototype and production needs.
               </p>
               
@@ -94,7 +94,7 @@ export const Hero = () => {
                 </svg>
               </div>
               <span className="text-sm text-gray-700">
-                Fictiv-verified Inspections
+                Fraxium-verified Inspections
               </span>
             </div>
           </div>
