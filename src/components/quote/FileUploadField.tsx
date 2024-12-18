@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 
 interface FileUploadFieldProps {
-  onFileUpload: (file: File) => Promise<void>;
+  onFileUpload: (file: File) => Promise<string | undefined>;
 }
 
 export const FileUploadField = ({ onFileUpload }: FileUploadFieldProps) => {

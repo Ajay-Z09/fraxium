@@ -21,7 +21,7 @@ interface ProjectDetailsFormProps {
     estimatedBudget: string;
   };
   handleChange: (field: string, value: string) => void;
-  handleFileUpload: (file: File) => Promise<void>;
+  handleFileUpload: (file: File) => Promise<string | undefined>;
 }
 
 export const ProjectDetailsForm = ({ formData, handleChange, handleFileUpload }: ProjectDetailsFormProps) => {
