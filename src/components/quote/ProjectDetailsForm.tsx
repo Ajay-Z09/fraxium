@@ -1,6 +1,8 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { DimensionsInput } from "./DimensionsInput";
+import { FileUploadField } from "./FileUploadField";
 
 interface ProjectDetailsFormProps {
   formData: {
@@ -19,7 +21,7 @@ interface ProjectDetailsFormProps {
     estimatedBudget: string;
   };
   handleChange: (field: string, value: string) => void;
-  handleFileUpload: (file: File) => void;
+  handleFileUpload: (file: File) => Promise<void>;
 }
 
 export const ProjectDetailsForm = ({ formData, handleChange, handleFileUpload }: ProjectDetailsFormProps) => {
@@ -66,44 +68,12 @@ export const ProjectDetailsForm = ({ formData, handleChange, handleFileUpload }:
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <Label htmlFor="length">Length (mm)</Label>
-          <Input
-            id="length"
-            type="number"
-            value={formData.length}
-            onChange={(e) => handleChange("length", e.target.value)}
-            required
-            className="mt-2"
-            placeholder="0.00"
-          />
-        </div>
-        <div>
-          <Label htmlFor="width">Width (mm)</Label>
-          <Input
-            id="width"
-            type="number"
-            value={formData.width}
-            onChange={(e) => handleChange("width", e.target.value)}
-            required
-            className="mt-2"
-            placeholder="0.00"
-          />
-        </div>
-        <div>
-          <Label htmlFor="height">Height (mm)</Label>
-          <Input
-            id="height"
-            type="number"
-            value={formData.height}
-            onChange={(e) => handleChange("height", e.target.value)}
-            required
-            className="mt-2"
-            placeholder="0.00"
-          />
-        </div>
-      </div>
+      <DimensionsInput
+        length={formData.length}
+        width={formData.width}
+        height={formData.height}
+        onChange={handleChange}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
@@ -178,19 +148,7 @@ export const ProjectDetailsForm = ({ formData, handleChange, handleFileUpload }:
         />
       </div>
 
-      <div>
-        <Label htmlFor="cadFile">Upload Your CAD File</Label>
-        <Input
-          id="cadFile"
-          type="file"
-          onChange={(e) => {
-            const file = e.target.files?.[0];
-            if (file) handleFileUpload(file);
-          }}
-          className="mt-2"
-          accept=".stl,.step,.stp,.iges,.igs,.x_t,.x_b,.sldprt"
-        />
-      </div>
+      <FileUploadField onFileUpload={handleFileUpload} />
 
       <div>
         <Label htmlFor="estimatedBudget">Estimated Budget (Optional)</Label>
