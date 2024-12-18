@@ -11,31 +11,46 @@ export type Database = {
     Tables: {
       quote_requests: {
         Row: {
+          additional_requirements: string | null
+          cad_file_url: string | null
           company: string
           created_at: string
           email: string
+          estimated_budget: number | null
           id: string
+          lead_time: string | null
           name: string
           phone: string
           project_details: string
+          quantity: number | null
         }
         Insert: {
+          additional_requirements?: string | null
+          cad_file_url?: string | null
           company: string
           created_at?: string
           email: string
+          estimated_budget?: number | null
           id?: string
+          lead_time?: string | null
           name: string
           phone: string
           project_details: string
+          quantity?: number | null
         }
         Update: {
+          additional_requirements?: string | null
+          cad_file_url?: string | null
           company?: string
           created_at?: string
           email?: string
+          estimated_budget?: number | null
           id?: string
+          lead_time?: string | null
           name?: string
           phone?: string
           project_details?: string
+          quantity?: number | null
         }
         Relationships: []
       }

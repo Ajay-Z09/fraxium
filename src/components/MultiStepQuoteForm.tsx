@@ -13,57 +13,87 @@ export const MultiStepQuoteForm = () => {
   const [formData, setFormData] = useState({
     // Customer Details (Step 1)
     fullName: "",
-    companyName: "",
     email: "",
     phone: "",
-    address: "",
-    industry: "",
+    companyName: "",
     
     // Project Details (Step 2)
     partName: "",
     materialType: "",
     materialGrade: "",
-    certifications: "",
     length: "",
     width: "",
     height: "",
+    quantity: "",
     tolerances: "",
     machiningType: "",
-    specialProcesses: "",
-    surfaceFinish: "",
+    certifications: "",
+    additionalRequirements: "",
+    leadTime: "",
+    estimatedBudget: "",
   });
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  const handleFileUpload = async (file: File) => {
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Math.random()}.${fileExt}`;
+      const { error: uploadError } = await supabase.storage
+        .from('cad-files')
+        .upload(fileName, file);
+
+      if (uploadError) throw uploadError;
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('cad-files')
+        .getPublicUrl(fileName);
+
+      toast({
+        title: "File Uploaded",
+        description: "Your CAD file has been uploaded successfully.",
+      });
+
+      return publicUrl;
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      toast({
+        title: "Upload Error",
+        description: "There was a problem uploading your file. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     try {
-      // Save to Supabase
       const { error } = await supabase.from('quote_requests').insert({
         name: formData.fullName,
         email: formData.email,
         company: formData.companyName,
         phone: formData.phone,
         project_details: JSON.stringify({
-          address: formData.address,
-          industry: formData.industry,
           partName: formData.partName,
           materialType: formData.materialType,
           materialGrade: formData.materialGrade,
-          certifications: formData.certifications,
           dimensions: {
             length: formData.length,
             width: formData.width,
             height: formData.height,
           },
+          quantity: parseInt(formData.quantity),
           tolerances: formData.tolerances,
           machiningType: formData.machiningType,
-          specialProcesses: formData.specialProcesses,
-          surfaceFinish: formData.surfaceFinish,
+          certifications: formData.certifications,
         }),
+        quantity: parseInt(formData.quantity),
+        lead_time: formData.leadTime,
+        estimated_budget: formData.estimatedBudget ? parseFloat(formData.estimatedBudget) : null,
+        additional_requirements: formData.additionalRequirements,
       });
 
       if (error) throw error;
@@ -76,22 +106,22 @@ export const MultiStepQuoteForm = () => {
       // Reset form
       setFormData({
         fullName: "",
-        companyName: "",
         email: "",
         phone: "",
-        address: "",
-        industry: "",
+        companyName: "",
         partName: "",
         materialType: "",
         materialGrade: "",
-        certifications: "",
         length: "",
         width: "",
         height: "",
+        quantity: "",
         tolerances: "",
         machiningType: "",
-        specialProcesses: "",
-        surfaceFinish: "",
+        certifications: "",
+        additionalRequirements: "",
+        leadTime: "",
+        estimatedBudget: "",
       });
       setStep(1);
     } catch (error) {
@@ -140,7 +170,11 @@ export const MultiStepQuoteForm = () => {
                   </>
                 ) : (
                   <>
-                    <ProjectDetailsForm formData={formData} handleChange={handleChange} />
+                    <ProjectDetailsForm 
+                      formData={formData} 
+                      handleChange={handleChange}
+                      handleFileUpload={handleFileUpload}
+                    />
                     <div className="mt-8 flex gap-4">
                       <Button
                         type="button"
