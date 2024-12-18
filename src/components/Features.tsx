@@ -44,9 +44,33 @@ const features = [
 ];
 
 export const Features = () => {
+  const trustedCompanies = [
+    "Lockheed Martin",
+    "Medtronic",
+    "Siemens Energy",
+    "ABB",
+    "Haas Automation",
+    "Wärtsilä"
+  ];
+
   return (
     <div className="bg-muted py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Trusted By Section */}
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-8">
+            Trusted By
+          </h2>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            {trustedCompanies.map((company) => (
+              <span key={company} className="text-lg text-gray-600 font-semibold">
+                {company}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Original Content */}
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Industry-Leading Precision Manufacturing
