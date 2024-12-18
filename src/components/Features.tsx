@@ -57,15 +57,20 @@ export const Features = () => {
     <div className="bg-muted py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Trusted By Section */}
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-8">
-            Trusted By
-          </h2>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+        <div className="mx-auto max-w-4xl text-center mb-20">
+          <p className="text-lg text-gray-600 mb-8">
+            Trusted by engineers at
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
             {trustedCompanies.map((company) => (
-              <span key={company} className="text-lg text-gray-600 font-semibold">
-                {company}
-              </span>
+              <div 
+                key={company} 
+                className="flex items-center justify-center h-16"
+              >
+                <span className="text-xl text-gray-800 font-semibold hover:text-accent transition-colors">
+                  {company}
+                </span>
+              </div>
             ))}
           </div>
         </div>
