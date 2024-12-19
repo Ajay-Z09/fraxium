@@ -1,5 +1,4 @@
 import { Shield, Clock, Award, Factory, FileCheck, Ruler, Zap } from "lucide-react";
-import { TrustedCompanies } from "./TrustedCompanies";
 
 const features = [
   {
@@ -45,11 +44,31 @@ const features = [
 ];
 
 export const Features = () => {
+  const trustedCompanies = [
+    "Lockheed Martin",
+    "Medtronic",
+    "Siemens Energy",
+    "ABB",
+    "Haas Automation",
+    "Wärtsilä"
+  ];
+
   return (
     <div className="bg-muted py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Trusted By Section */}
-        <TrustedCompanies />
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-8">
+            Trusted By
+          </h2>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            {trustedCompanies.map((company) => (
+              <span key={company} className="text-lg text-gray-600 font-semibold">
+                {company}
+              </span>
+            ))}
+          </div>
+        </div>
 
         {/* Original Content */}
         <div className="mx-auto max-w-2xl text-center">
@@ -60,8 +79,6 @@ export const Features = () => {
             Our commitment to excellence and advanced manufacturing capabilities ensure your components meet the highest standards of precision and quality.
           </p>
         </div>
-
-        {/* Features Grid */}
         <div className="mx-auto mt-16 max-w-7xl sm:mt-20 lg:mt-24">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-4 lg:gap-y-16">
             {features.map((feature) => (
