@@ -58,7 +58,7 @@ export const Features = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Trusted By Section */}
         <div className="mx-auto max-w-4xl text-center mb-20">
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-[#0066CC] font-medium mb-8">
             Trusted by engineers at
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
