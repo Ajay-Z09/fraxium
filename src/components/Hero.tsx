@@ -20,9 +20,6 @@ export const Hero = () => {
             <div className="border-b-4 border-[#706FD3] pb-2">
               <span className="text-[#706FD3] font-semibold">For Prototyping</span>
             </div>
-            <div className="pb-2">
-              <span className="text-gray-600 font-semibold">For Production</span>
-            </div>
           </div>
 
           {/* Main Content */}
