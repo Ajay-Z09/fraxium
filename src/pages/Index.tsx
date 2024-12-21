@@ -4,6 +4,7 @@ import { Services } from "@/components/Services";
 import { MaterialSelection } from "@/components/MaterialSelection";
 import { MultiStepQuoteForm } from "@/components/MultiStepQuoteForm";
 import { Footer } from "@/components/Footer";
+import { HowWeWork } from "@/components/HowWeWork";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <Hero />
       <Features />
       <Services />
+      <HowWeWork />
       <MaterialSelection />
       <MultiStepQuoteForm />
       <Footer />
