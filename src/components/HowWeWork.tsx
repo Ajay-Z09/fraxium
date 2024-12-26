@@ -1,27 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Upload, FileCheck, Play, Package } from "lucide-react";
+import { Users, FileCheck2, Wrench } from "lucide-react";
 
 export const HowWeWork = () => {
   const steps = [
     {
-      title: "Upload Your CAD File",
-      description: "Start by selecting a manufacturing process and uploading a 3D CAD file to kick off the end-to-end manufacturing solution.",
-      icon: <Upload className="w-8 h-8 text-white" />
+      title: "Understand Your Vision",
+      description: "In a 1-to-1 session, we collaborate with your R&D team to identify goals and challenges.",
+      icon: <Users className="w-8 h-8 text-white" />
     },
     {
-      title: "Receive a Quote with DFM",
-      description: "Within hours, you'll get a detailed Design for Manufacturability (DFM) analysis along with an accurate real-time quote, ensuring a seamless experience.",
-      icon: <FileCheck className="w-8 h-8 text-white" />
+      title: "Optimize Designs",
+      description: "Provide comprehensive DFM analysis to enhance manufacturability.",
+      icon: <FileCheck2 className="w-8 h-8 text-white" />
     },
     {
-      title: "Production Commences",
-      description: "Once you approve the quote and place your order, we'll initiate the manufacturing process. Additional finishing options are available to meet your needs.",
-      icon: <Play className="w-8 h-8 text-white" />
-    },
-    {
-      title: "Parts Delivered!",
-      description: "Leveraging our efficient digital manufacturing system, we'll produce and ship your parts in as little as one day, completing the end-to-end solution.",
-      icon: <Package className="w-8 h-8 text-white" />
+      title: "Build Prototypes",
+      description: "Develop precise prototypes to bring your ideas to life.",
+      icon: <Wrench className="w-8 h-8 text-white" />
     }
   ];
 
@@ -30,14 +25,14 @@ export const HowWeWork = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            How We Work
+            Our 3-Step Process
           </h2>
           <p className="mt-4 text-lg leading-8 text-white/80">
-            Our streamlined process ensures quality and efficiency
+            How We Work Together
           </p>
         </div>
         
-        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-3">
           {steps.map((step, index) => (
             <Card key={index} className="bg-white/10 border-0 backdrop-blur-sm transition-all duration-300 hover:bg-white/20">
               <CardContent className="p-6">
