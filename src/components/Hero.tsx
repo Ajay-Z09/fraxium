@@ -17,13 +17,12 @@ export const Hero = () => {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-6 animate-fadeIn">
+            {/* New Hero Content */}
             <h1 className="text-4xl sm:text-6xl font-bold text-[#1A2B3B] leading-tight">
-              Custom Manufactured Parts Done Right.
+              1-to-1 Collaboration for Precision-Driven Innovation
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Discover the Fraxium difference for faster lead times, higher-quality parts, 
-              no minimum order quantities, and extensive capabilities. Partner with Fraxium 
-              for all of your prototype and production needs.
+              Partnering with R&D teams to turn groundbreaking ideas into manufacturable solutions through tailored DFM consultation and prototype development.
             </p>
             
             {/* CTA Buttons */}
@@ -32,7 +31,7 @@ export const Hero = () => {
                 onClick={scrollToQuote}
                 className="bg-[#706FD3] hover:bg-[#706FD3]/90 text-white font-semibold px-8 py-6 text-lg"
               >
-                Get Instant Quote
+                Start Your Collaboration Journey
               </Button>
               <Button 
                 variant="outline"
