@@ -4,7 +4,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
 import { CustomerDetailsForm } from "./quote/CustomerDetailsForm";
 import { ProjectDetailsForm } from "./quote/ProjectDetailsForm";
-import { StepIndicator } from "./quote/StepIndicator";
 import { supabase } from "@/integrations/supabase/client";
 
 export const MultiStepQuoteForm = () => {
@@ -152,8 +151,6 @@ export const MultiStepQuoteForm = () => {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20">
           <Card className="border-0 shadow-lg">
             <CardContent className="p-8">
-              <StepIndicator currentStep={step} totalSteps={2} />
-
               <form onSubmit={handleSubmit}>
                 {step === 1 ? (
                   <>
