@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { AuthButton } from "./AuthButton";
 
 export const Hero = () => {
   const scrollToQuote = () => {
@@ -12,6 +13,11 @@ export const Hero = () => {
         {/* Brand Logo */}
         <div className="absolute top-8 left-8">
           <h1 className="text-2xl font-bold text-[#706FD3]">Fraxium</h1>
+        </div>
+
+        {/* Auth Button */}
+        <div className="absolute top-8 right-8">
+          <AuthButton />
         </div>
 
         {/* Main Content */}
