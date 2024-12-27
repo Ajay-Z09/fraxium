@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Play, LayoutDashboard } from "lucide-react";
 import { AuthButton } from "./AuthButton";
 
 export const Hero = () => {
@@ -15,8 +15,16 @@ export const Hero = () => {
           <h1 className="text-2xl font-bold text-[#706FD3]">Fraxium</h1>
         </div>
 
-        {/* Auth Button */}
-        <div className="absolute top-8 right-8">
+        {/* Auth and Dashboard Buttons */}
+        <div className="absolute top-8 right-8 flex gap-4">
+          <Button 
+            variant="outline"
+            className="flex items-center gap-2 border-gray-300"
+            onClick={() => {/* Dashboard logic will be implemented later */}}
+          >
+            <LayoutDashboard className="w-4 h-4" />
+            Dashboard
+          </Button>
           <AuthButton />
         </div>
 
