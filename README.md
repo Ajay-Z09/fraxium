@@ -4,6 +4,47 @@
 
 **URL**: https://lovable.dev/projects/17e3ce05-a4c9-4341-bb30-a54615752ef3
 
+## How to Deploy to GitHub Pages
+
+1. First, create a new repository on GitHub
+2. Push your code to the repository:
+```sh
+git remote add origin YOUR_GITHUB_REPO_URL
+git branch -M main
+git push -u origin main
+```
+
+3. Install the gh-pages package:
+```sh
+npm install gh-pages --save-dev
+```
+
+4. Add these scripts to your package.json:
+```json
+{
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}
+```
+
+5. Add homepage to your package.json:
+```json
+{
+  "homepage": "https://yourusername.github.io/your-repo-name"
+}
+```
+
+6. Deploy your website:
+```sh
+npm run deploy
+```
+
+7. On GitHub, go to your repository settings, scroll down to "GitHub Pages" section, and select the "gh-pages" branch as the source.
+
+Your site will be available at: https://yourusername.github.io/your-repo-name
+
 ## How can I edit this code?
 
 There are several ways of editing your application.
@@ -62,7 +103,13 @@ This project is built with .
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/17e3ce05-a4c9-4341-bb30-a54615752ef3) and click on Share -> Publish.
+You can deploy this project in two ways:
+
+1. Using Lovable:
+   Simply open [Lovable](https://lovable.dev/projects/17e3ce05-a4c9-4341-bb30-a54615752ef3) and click on Share -> Publish.
+
+2. Using GitHub Pages:
+   Follow the GitHub Pages deployment instructions above.
 
 ## I want to use a custom domain - is that possible?
 
