@@ -1,9 +1,9 @@
-import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import Services from "@/components/Services";
-import HowWeWork from "@/components/HowWeWork";
-import MaterialSelection from "@/components/MaterialSelection";
-import MultiStepQuoteForm from "@/components/MultiStepQuoteForm";
+import { Hero } from "@/components/Hero";
+import { Features } from "@/components/Features";
+import { Services } from "@/components/Services";
+import { HowWeWork } from "@/components/HowWeWork";
+import { MaterialSelection } from "@/components/MaterialSelection";
+import { MultiStepQuoteForm } from "@/components/MultiStepQuoteForm";
 
 const Index = () => {
   return (
