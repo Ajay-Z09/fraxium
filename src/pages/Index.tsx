@@ -1,3 +1,4 @@
+
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Services } from "@/components/Services";
@@ -7,7 +8,7 @@ import { MultiStepQuoteForm } from "@/components/MultiStepQuoteForm";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       <Hero />
       <Features />
       <Services />
