@@ -6,20 +6,7 @@ export const Services = () => {
     {
       title: "CNC Machining",
       icon: <Settings2 className="w-8 h-8 text-accent" />,
-      description: "High-precision computer-controlled manufacturing for complex parts",
-      image: "https://images.unsplash.com/photo-1518770660439"
-    },
-    {
-      title: "Metal 3D Printing",
-      icon: <Printer className="w-8 h-8 text-accent" />,
-      description: "Advanced additive manufacturing for complex metal components",
-      image: "https://images.unsplash.com/photo-1485827404703"
-    },
-    {
-      title: "DFM Analysis",
-      icon: <Scan className="w-8 h-8 text-accent" />,
-      description: "Comprehensive Design for Manufacturing analysis",
-      image: "https://images.unsplash.com/photo-1488590528505"
+      description: "High-precision computer-controlled manufacturing for complex parts"
     },
     {
       title: "EDM",
@@ -85,28 +72,9 @@ export const Services = () => {
           </p>
         </div>
         
-        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.slice(0, 3).map((service, index) => (
-            <Card key={index} className="border-2 border-gray-100 transition-all duration-300 hover:border-accent/50 hover:shadow-lg overflow-hidden">
-              <div className="h-48 w-full overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-              <CardContent className="p-6">
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-primary mb-2">{service.title}</h3>
-                <p className="text-sm text-gray-600">{service.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
         <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.slice(3).map((service, index) => (
-            <Card key={index + 3} className="border-2 border-gray-100 transition-all duration-300 hover:border-accent/50 hover:shadow-lg">
+          {services.map((service, index) => (
+            <Card key={index} className="border-2 border-gray-100 transition-all duration-300 hover:border-accent/50 hover:shadow-lg">
               <CardContent className="p-6">
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-lg font-semibold text-primary mb-2">{service.title}</h3>
